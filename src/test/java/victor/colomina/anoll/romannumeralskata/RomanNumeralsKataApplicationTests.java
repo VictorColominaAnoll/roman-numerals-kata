@@ -133,9 +133,30 @@ class RomanNumeralsKataApplicationTests {
     void it_should_return_value_for_number_85() {
         assertEquals("LXXXV", romanNumberConvertor.convert(85));
     }
+
     @Test
     void it_should_return_value_for_number_92() {
         assertEquals("XCII", romanNumberConvertor.convert(92));
+    }
+
+    @Test
+    void it_should_return_value_for_number_102() {
+        assertEquals("CII", romanNumberConvertor.convert(102));
+    }
+
+    @Test
+    void it_should_return_value_for_number_123() {
+        assertEquals("CXXIII", romanNumberConvertor.convert(123));
+    }
+
+    @Test
+    void it_should_return_value_for_number_481() {
+        assertEquals("CDLXXXI", romanNumberConvertor.convert(481));
+    }
+
+    @Test
+    void it_should_return_value_for_number_999() {
+        assertEquals("CMXCIX", romanNumberConvertor.convert(999));
     }
 
 }

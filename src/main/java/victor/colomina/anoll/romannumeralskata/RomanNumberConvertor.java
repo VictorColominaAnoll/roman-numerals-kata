@@ -6,7 +6,18 @@ public class RomanNumberConvertor {
     }
 
     public String convert(int number) {
-        return getTensNumber(number / 10) + getOnesNumber(number % 10);
+        String result = "";
+
+        if (number >= 100) {
+            result += getHundredsNumber(number / 100);
+            number =  number % 100;
+        }
+
+        return result + getTensNumber(number / 10) + getOnesNumber(number % 10);
+    }
+
+    private String getHundredsNumber(int number) {
+        return transformNumericNumberToRomanNumber(number, "C", "D", "M");
     }
 
     private String getTensNumber(int number) {
