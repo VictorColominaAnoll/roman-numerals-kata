@@ -3,7 +3,7 @@ package victor.colomina.anoll.romannumeralskata;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class RomanNumeralsKataApplicationTests {
@@ -16,7 +16,7 @@ class RomanNumeralsKataApplicationTests {
 
     @Test
     void it_should_return_value_for_number_1() {
-        assertEquals(romanNumberConvertor.convert(1), "I");
+        assertEquals("I", romanNumberConvertor.convert(1));
     }
 
     @Test
@@ -41,7 +41,7 @@ class RomanNumeralsKataApplicationTests {
 
     @Test
     void it_should_return_value_for_number_6() {
-        assertEquals(romanNumberConvertor.convert(6), "VI");
+        assertEquals("VI", romanNumberConvertor.convert(6));
     }
 
     @Test
@@ -104,6 +104,38 @@ class RomanNumeralsKataApplicationTests {
         assertEquals(romanNumberConvertor.convert(29), "XXIX");
     }
 
+    @Test
+    void it_should_return_value_for_number_40() {
+        assertEquals(romanNumberConvertor.convert(40), "XL");
+    }
 
+    @Test
+    void it_should_return_value_for_number_42() {
+        assertEquals(romanNumberConvertor.convert(42), "XLII");
+    }
+
+    @Test
+    void it_should_return_value_for_number_47() {
+        assertEquals(romanNumberConvertor.convert(47), "XLVII");
+    }
+
+    @Test
+    void it_should_return_value_for_number_49() {
+        assertEquals(romanNumberConvertor.convert(49), "XLIX");
+    }
+
+    @Test
+    void it_should_return_value_for_number_62() {
+        assertEquals("LXII", romanNumberConvertor.convert(62));
+    }
+
+    @Test
+    void it_should_return_value_for_number_85() {
+        assertEquals("LXXXV", romanNumberConvertor.convert(85));
+    }
+    @Test
+    void it_should_return_value_for_number_92() {
+        assertEquals("XCII", romanNumberConvertor.convert(92));
+    }
 
 }

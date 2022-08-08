@@ -6,22 +6,27 @@ public class RomanNumberConvertor {
     }
 
     public String convert(int number) {
+        return getTensNumber(number / 10) + getOnesNumber(number % 10);
+    }
 
-        String romanNumber = "";
-
-        if (number >= 10) romanNumber += "X".repeat(Math.max(0, number / 10));
-
-        return romanNumber + getOnesNumber(number % 10);
+    private String getTensNumber(int number) {
+        return transformNumericNumberToRomanNumber(number, "X", "L", "C");
     }
 
     private String getOnesNumber(int ones) {
+        return transformNumericNumberToRomanNumber(ones, "I", "V", "X");
+    }
+
+    private String transformNumericNumberToRomanNumber(int number, String small, String middle, String big) {
         String result = "";
 
-        if (ones == 9) return "IX";
+        if (number == 9) return small + big;
 
-        if (ones >= 5) result += "V";
-        if (ones == 4) return "IV";
+        if (number >= 5) result += middle;
+        if (number == 4) return small + middle;
 
-        return result + "I".repeat(Math.max(0, ones % 5));
+        return result + small.repeat(Math.max(0, number % 5));
     }
+
+
 }
